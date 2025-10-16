@@ -4,7 +4,9 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="76f4ec7b-a70b-4b77-9709-c5702ab1eb7f" name="변경" comment="" />
+    <list default="true" id="76f4ec7b-a70b-4b77-9709-c5702ab1eb7f" name="변경" comment="">
+      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+    </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
     <option name="HIGHLIGHT_NON_ACTIVE_CHANGELIST" value="false" />
@@ -25,6 +27,9 @@
   &quot;associatedIndex&quot;: 4
 }</component>
   <component name="ProjectId" id="345NqXrMGZDyMqNrzaaVeoHzvEt" />
+  <component name="ProjectLevelVcsManager">
+    <ConfirmationsSetting value="1" id="Add" />
+  </component>
   <component name="ProjectViewState">
     <option name="hideEmptyMiddlePackages" value="true" />
     <option name="showLibraryContents" value="true" />
@@ -34,7 +39,8 @@
     "ModuleVcsDetector.initialDetectionPerformed": "true",
     "RunOnceActivity.ShowReadmeOnStart": "true",
     "RunOnceActivity.TerminalTabsStorage.copyFrom.TerminalArrangementManager.252": "true",
-    "git-widget-placeholder": "master",
+    "RunOnceActivity.git.unshallow": "true",
+    "git-widget-placeholder": "main",
     "kotlin-language-version-configured": "true",
     "last_opened_file_path": "D:/OHYOUNGJIN/java_study/korit_java_study",
     "onboarding.tips.debug.path": "D:/OHYOUNGJIN/java_study/korit_java_study/src/Main.java",
@@ -42,17 +48,77 @@
     "project.structure.proportion": "0.15",
     "project.structure.side.proportion": "0.2",
     "settings.editor.selected.configurable": "reference.projectsettings.compiler.javacompiler",
+    "애플리케이션.EscapeSequence.executor": "Run",
+    "애플리케이션.Operator.executor": "Run",
+    "애플리케이션.Scanner01.executor": "Run",
+    "애플리케이션.String01.executor": "Run",
+    "애플리케이션.String02.executor": "Run",
+    "애플리케이션.StringCompare.executor": "Run",
     "애플리케이션.TypeCasting.executor": "Run",
-    "애플리케이션.VariablesNaming.executor": "Run"
+    "애플리케이션.VariablesNaming.executor": "Run",
+    "애플리케이션.if01.executor": "Run",
+    "애플리케이션.if02.executor": "Run"
   }
 }]]></component>
-  <component name="RunManager">
-    <configuration name="VariablesNaming" type="Application" factoryName="Application" temporary="true" nameIsGenerated="true">
-      <option name="MAIN_CLASS_NAME" value="_03_VariablesNaming.VariablesNaming" />
+  <component name="RunManager" selected="애플리케이션.if02">
+    <configuration name="EscapeSequence" type="Application" factoryName="Application" temporary="true" nameIsGenerated="true">
+      <option name="MAIN_CLASS_NAME" value="_06_String.EscapeSequence" />
       <module name="korit_java_study" />
       <extension name="coverage">
         <pattern>
-          <option name="PATTERN" value="_03_VariablesNaming.*" />
+          <option name="PATTERN" value="_06_String.*" />
+          <option name="ENABLED" value="true" />
+        </pattern>
+      </extension>
+      <method v="2">
+        <option name="Make" enabled="true" />
+      </method>
+    </configuration>
+    <configuration name="Scanner01" type="Application" factoryName="Application" temporary="true" nameIsGenerated="true">
+      <option name="MAIN_CLASS_NAME" value="_07_Scarnner.Scanner01" />
+      <module name="korit_java_study" />
+      <extension name="coverage">
+        <pattern>
+          <option name="PATTERN" value="_07_Scarnner.*" />
+          <option name="ENABLED" value="true" />
+        </pattern>
+      </extension>
+      <method v="2">
+        <option name="Make" enabled="true" />
+      </method>
+    </configuration>
+    <configuration name="StringCompare" type="Application" factoryName="Application" temporary="true" nameIsGenerated="true">
+      <option name="MAIN_CLASS_NAME" value="_06_String.StringCompare" />
+      <module name="korit_java_study" />
+      <extension name="coverage">
+        <pattern>
+          <option name="PATTERN" value="_06_String.*" />
+          <option name="ENABLED" value="true" />
+        </pattern>
+      </extension>
+      <method v="2">
+        <option name="Make" enabled="true" />
+      </method>
+    </configuration>
+    <configuration name="if01" type="Application" factoryName="Application" temporary="true" nameIsGenerated="true">
+      <option name="MAIN_CLASS_NAME" value="_08_d.if01" />
+      <module name="korit_java_study" />
+      <extension name="coverage">
+        <pattern>
+          <option name="PATTERN" value="_08_d.*" />
+          <option name="ENABLED" value="true" />
+        </pattern>
+      </extension>
+      <method v="2">
+        <option name="Make" enabled="true" />
+      </method>
+    </configuration>
+    <configuration name="if02" type="Application" factoryName="Application" temporary="true" nameIsGenerated="true">
+      <option name="MAIN_CLASS_NAME" value="_08_d.if02" />
+      <module name="korit_java_study" />
+      <extension name="coverage">
+        <pattern>
+          <option name="PATTERN" value="_08_d.*" />
           <option name="ENABLED" value="true" />
         </pattern>
       </extension>
@@ -62,7 +128,11 @@
     </configuration>
     <recent_temporary>
       <list>
-        <item itemvalue="애플리케이션.VariablesNaming" />
+        <item itemvalue="애플리케이션.if02" />
+        <item itemvalue="애플리케이션.if01" />
+        <item itemvalue="애플리케이션.Scanner01" />
+        <item itemvalue="애플리케이션.StringCompare" />
+        <item itemvalue="애플리케이션.EscapeSequence" />
       </list>
     </recent_temporary>
   </component>
@@ -75,5 +145,27 @@
       <updated>1760499663896</updated>
     </task>
     <servers />
+  </component>
+  <component name="Vcs.Log.Tabs.Properties">
+    <option name="TAB_STATES">
+      <map>
+        <entry key="MAIN">
+          <value>
+            <State />
+          </value>
+        </entry>
+      </map>
+    </option>
+  </component>
+  <component name="XDebuggerManager">
+    <breakpoint-manager>
+      <breakpoints>
+        <line-breakpoint enabled="true" type="java-line">
+          <url>file://$PROJECT_DIR$/src/_06_String/EscapeSequence.java</url>
+          <line>4</line>
+          <option name="timeStamp" value="1" />
+        </line-breakpoint>
+      </breakpoints>
+    </breakpoint-manager>
   </component>
 </project>
