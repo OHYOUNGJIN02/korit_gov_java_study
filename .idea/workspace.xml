@@ -6,6 +6,8 @@
   <component name="ChangeListManager">
     <list default="true" id="76f4ec7b-a70b-4b77-9709-c5702ab1eb7f" name="변경" comment="">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/_07_Scarnner/Scanner01.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/_07_Scarnner/Scanner01.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/_08_d/if02.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/_08_d/if02.java" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -60,7 +62,7 @@
     "애플리케이션.if02.executor": "Run"
   }
 }]]></component>
-  <component name="RunManager" selected="애플리케이션.if02">
+  <component name="RunManager" selected="애플리케이션.Scanner01">
     <configuration name="EscapeSequence" type="Application" factoryName="Application" temporary="true" nameIsGenerated="true">
       <option name="MAIN_CLASS_NAME" value="_06_String.EscapeSequence" />
       <module name="korit_java_study" />
@@ -128,9 +130,9 @@
     </configuration>
     <recent_temporary>
       <list>
+        <item itemvalue="애플리케이션.Scanner01" />
         <item itemvalue="애플리케이션.if02" />
         <item itemvalue="애플리케이션.if01" />
-        <item itemvalue="애플리케이션.Scanner01" />
         <item itemvalue="애플리케이션.StringCompare" />
         <item itemvalue="애플리케이션.EscapeSequence" />
       </list>

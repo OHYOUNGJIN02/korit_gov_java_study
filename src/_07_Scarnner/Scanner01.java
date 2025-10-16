@@ -30,10 +30,11 @@ public class Scanner01 {
         //int num2 = scanner.nextInt();
        // System.out.println("num2 : " + num2 );
 
-        int num = scanner.nextInt();
-        scanner.nextLine();
-        String str = scanner.nextLine();
-        System.out.println(" num : " + num + " str : " + str);
+        //
+        // int num = scanner.nextInt();
+        //scanner.nextLine();
+        //String str = scanner.nextLine();
+        //System.out.println(" num : " + num + " str : " + str);
 
         //나이와 이름을 입력받아서
         //출력=> 23살 오영진 입니다

@@ -44,6 +44,7 @@ public class if02 {
 
     Scanner scanner = new Scanner(System.in);
         System.out.println("y값을 입력하세요 >>");
+        x = scanner.nextInt();
         y = scanner.nextInt();
 
         if (x > 0 && y > 0) {
