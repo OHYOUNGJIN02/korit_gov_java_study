@@ -6,8 +6,6 @@
   <component name="ChangeListManager">
     <list default="true" id="76f4ec7b-a70b-4b77-9709-c5702ab1eb7f" name="변경" comment="">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/_07_Scarnner/Scanner01.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/_07_Scarnner/Scanner01.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/_08_d/if02.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/_08_d/if02.java" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -24,6 +22,18 @@
   <component name="Git.Settings">
     <option name="RECENT_GIT_ROOT_PATH" value="$PROJECT_DIR$" />
   </component>
+  <component name="GitHubPullRequestSearchHistory">{
+  &quot;lastFilter&quot;: {
+    &quot;state&quot;: &quot;OPEN&quot;,
+    &quot;assignee&quot;: &quot;OHYOUNGJIN02&quot;
+  }
+}</component>
+  <component name="GithubPullRequestsUISettings">{
+  &quot;selectedUrlAndAccountId&quot;: {
+    &quot;url&quot;: &quot;https://github.com/OHYOUNGJIN02/korit_gov_java_study.git&quot;,
+    &quot;accountId&quot;: &quot;dd935980-2cb4-4f12-8e9a-db646439ccca&quot;
+  }
+}</component>
   <component name="ProjectColorInfo">{
   &quot;customColor&quot;: &quot;&quot;,
   &quot;associatedIndex&quot;: 4
@@ -36,39 +46,41 @@
     <option name="hideEmptyMiddlePackages" value="true" />
     <option name="showLibraryContents" value="true" />
   </component>
-  <component name="PropertiesComponent"><![CDATA[{
-  "keyToString": {
-    "ModuleVcsDetector.initialDetectionPerformed": "true",
-    "RunOnceActivity.ShowReadmeOnStart": "true",
-    "RunOnceActivity.TerminalTabsStorage.copyFrom.TerminalArrangementManager.252": "true",
-    "RunOnceActivity.git.unshallow": "true",
-    "git-widget-placeholder": "main",
-    "kotlin-language-version-configured": "true",
-    "last_opened_file_path": "D:/OHYOUNGJIN/java_study/korit_java_study",
-    "onboarding.tips.debug.path": "D:/OHYOUNGJIN/java_study/korit_java_study/src/Main.java",
-    "project.structure.last.edited": "프로젝트",
-    "project.structure.proportion": "0.15",
-    "project.structure.side.proportion": "0.2",
-    "settings.editor.selected.configurable": "reference.projectsettings.compiler.javacompiler",
-    "애플리케이션.EscapeSequence.executor": "Run",
-    "애플리케이션.Operator.executor": "Run",
-    "애플리케이션.Scanner01.executor": "Run",
-    "애플리케이션.String01.executor": "Run",
-    "애플리케이션.String02.executor": "Run",
-    "애플리케이션.StringCompare.executor": "Run",
-    "애플리케이션.TypeCasting.executor": "Run",
-    "애플리케이션.VariablesNaming.executor": "Run",
-    "애플리케이션.if01.executor": "Run",
-    "애플리케이션.if02.executor": "Run"
+  <component name="PropertiesComponent">{
+  &quot;keyToString&quot;: {
+    &quot;ModuleVcsDetector.initialDetectionPerformed&quot;: &quot;true&quot;,
+    &quot;RunOnceActivity.ShowReadmeOnStart&quot;: &quot;true&quot;,
+    &quot;RunOnceActivity.TerminalTabsStorage.copyFrom.TerminalArrangementManager.252&quot;: &quot;true&quot;,
+    &quot;RunOnceActivity.git.unshallow&quot;: &quot;true&quot;,
+    &quot;git-widget-placeholder&quot;: &quot;main&quot;,
+    &quot;kotlin-language-version-configured&quot;: &quot;true&quot;,
+    &quot;last_opened_file_path&quot;: &quot;D:/OHYOUNGJIN/java_study/korit_java_study&quot;,
+    &quot;onboarding.tips.debug.path&quot;: &quot;D:/OHYOUNGJIN/java_study/korit_java_study/src/Main.java&quot;,
+    &quot;project.structure.last.edited&quot;: &quot;프로젝트&quot;,
+    &quot;project.structure.proportion&quot;: &quot;0.15&quot;,
+    &quot;project.structure.side.proportion&quot;: &quot;0.2&quot;,
+    &quot;settings.editor.selected.configurable&quot;: &quot;reference.projectsettings.compiler.javacompiler&quot;,
+    &quot;애플리케이션.EscapeSequence.executor&quot;: &quot;Run&quot;,
+    &quot;애플리케이션.For.executor&quot;: &quot;Run&quot;,
+    &quot;애플리케이션.Operator.executor&quot;: &quot;Run&quot;,
+    &quot;애플리케이션.Scanner01.executor&quot;: &quot;Run&quot;,
+    &quot;애플리케이션.String01.executor&quot;: &quot;Run&quot;,
+    &quot;애플리케이션.String02.executor&quot;: &quot;Run&quot;,
+    &quot;애플리케이션.StringCompare.executor&quot;: &quot;Run&quot;,
+    &quot;애플리케이션.SwitchCase.executor&quot;: &quot;Run&quot;,
+    &quot;애플리케이션.TypeCasting.executor&quot;: &quot;Run&quot;,
+    &quot;애플리케이션.VariablesNaming.executor&quot;: &quot;Run&quot;,
+    &quot;애플리케이션.if01.executor&quot;: &quot;Run&quot;,
+    &quot;애플리케이션.if02.executor&quot;: &quot;Run&quot;
   }
-}]]></component>
-  <component name="RunManager" selected="애플리케이션.Scanner01">
-    <configuration name="EscapeSequence" type="Application" factoryName="Application" temporary="true" nameIsGenerated="true">
-      <option name="MAIN_CLASS_NAME" value="_06_String.EscapeSequence" />
+}</component>
+  <component name="RunManager" selected="애플리케이션.For">
+    <configuration name="For" type="Application" factoryName="Application" temporary="true" nameIsGenerated="true">
+      <option name="MAIN_CLASS_NAME" value="_10_For.For" />
       <module name="korit_java_study" />
       <extension name="coverage">
         <pattern>
-          <option name="PATTERN" value="_06_String.*" />
+          <option name="PATTERN" value="_10_For.*" />
           <option name="ENABLED" value="true" />
         </pattern>
       </extension>
@@ -89,12 +101,12 @@
         <option name="Make" enabled="true" />
       </method>
     </configuration>
-    <configuration name="StringCompare" type="Application" factoryName="Application" temporary="true" nameIsGenerated="true">
-      <option name="MAIN_CLASS_NAME" value="_06_String.StringCompare" />
+    <configuration name="SwitchCase" type="Application" factoryName="Application" temporary="true" nameIsGenerated="true">
+      <option name="MAIN_CLASS_NAME" value="_09_SwitchCase.SwitchCase" />
       <module name="korit_java_study" />
       <extension name="coverage">
         <pattern>
-          <option name="PATTERN" value="_06_String.*" />
+          <option name="PATTERN" value="_09_SwitchCase.*" />
           <option name="ENABLED" value="true" />
         </pattern>
       </extension>
@@ -130,11 +142,11 @@
     </configuration>
     <recent_temporary>
       <list>
-        <item itemvalue="애플리케이션.Scanner01" />
+        <item itemvalue="애플리케이션.For" />
+        <item itemvalue="애플리케이션.SwitchCase" />
         <item itemvalue="애플리케이션.if02" />
+        <item itemvalue="애플리케이션.Scanner01" />
         <item itemvalue="애플리케이션.if01" />
-        <item itemvalue="애플리케이션.StringCompare" />
-        <item itemvalue="애플리케이션.EscapeSequence" />
       </list>
     </recent_temporary>
   </component>
@@ -146,6 +158,15 @@
       <option name="presentableId" value="Default" />
       <updated>1760499663896</updated>
     </task>
+    <task id="LOCAL-00001" summary="1">
+      <option name="closed" value="true" />
+      <created>1760600818167</created>
+      <option name="number" value="00001" />
+      <option name="presentableId" value="LOCAL-00001" />
+      <option name="project" value="LOCAL" />
+      <updated>1760600818167</updated>
+    </task>
+    <option name="localTasksCounter" value="2" />
     <servers />
   </component>
   <component name="Vcs.Log.Tabs.Properties">
@@ -159,6 +180,10 @@
       </map>
     </option>
   </component>
+  <component name="VcsManagerConfiguration">
+    <MESSAGE value="1" />
+    <option name="LAST_COMMIT_MESSAGE" value="1" />
+  </component>
   <component name="XDebuggerManager">
     <breakpoint-manager>
       <breakpoints>
@@ -166,6 +191,15 @@
           <url>file://$PROJECT_DIR$/src/_06_String/EscapeSequence.java</url>
           <line>4</line>
           <option name="timeStamp" value="1" />
+        </line-breakpoint>
+        <line-breakpoint enabled="true" type="java-method">
+          <url>file://$PROJECT_DIR$/src/_10_For/For.java</url>
+          <line>5</line>
+          <properties class="_10_For.For" method="main">
+            <option name="EMULATED" value="true" />
+            <option name="WATCH_EXIT" value="false" />
+          </properties>
+          <option name="timeStamp" value="2" />
         </line-breakpoint>
       </breakpoints>
     </breakpoint-manager>
