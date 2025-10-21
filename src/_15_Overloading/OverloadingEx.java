@@ -5,16 +5,23 @@ public class OverloadingEx {
         //max()
         //int 숫자 두개 중 더 큰 값 리턴
         //double 숫자 두개 중 더 큰 값 리턴
+        System.out.println(max(5,7));
 
 
     }
-    public static int getMax(){
-        int num = 10;
-        return num;
+    public static int max(int a, int b){
+        return a > b ? a : b;
+
+
+    }
+    public static double max(double a, double b) {
+        return a > b ? a : b;
+        //return Math.max(a,b)도 사용가능
+    }
+
 
 
     }
 
 
-    }
 
