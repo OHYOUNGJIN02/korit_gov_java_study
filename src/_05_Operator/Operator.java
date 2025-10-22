@@ -84,7 +84,7 @@ public class Operator {
         System.out.println(min);
 
         y=5;
-        boolean isSame = (x ==y) ? true : false;
+        boolean isSame = (x == y) ? true : false;
         System.out.println(isSame);
 
         //String same =(x != y) ? "다름" : "같음";
