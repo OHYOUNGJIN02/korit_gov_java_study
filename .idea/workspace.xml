@@ -6,8 +6,9 @@
   <component name="ChangeListManager">
     <list default="true" id="76f4ec7b-a70b-4b77-9709-c5702ab1eb7f" name="변경" comment="ex">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/_14_Method/MethodEx.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/_14_Method/MethodEx.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/_14_Method/Parameter.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/_14_Method/Parameter.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/Student/Student.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/Student/Student.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/Student/StudentMain.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/Student/StudentMain.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/_16_Class/Car/CarMain.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/_16_Class/Car/CarMain.java" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -63,6 +64,7 @@
     "project.structure.side.proportion": "0.2",
     "settings.editor.selected.configurable": "reference.projectsettings.compiler.javacompiler",
     "애플리케이션.ArrayEx.executor": "Run",
+    "애플리케이션.BankAccountMain.executor": "Run",
     "애플리케이션.CarMain.executor": "Run",
     "애플리케이션.DogMain.executor": "Run",
     "애플리케이션.EscapeSequence.executor": "Run",
@@ -84,11 +86,25 @@
     "애플리케이션.SwitchCase.executor": "Run",
     "애플리케이션.TypeCasting.executor": "Run",
     "애플리케이션.VariablesNaming.executor": "Run",
+    "애플리케이션.WaterBottleMain.executor": "Run",
     "애플리케이션.if01.executor": "Run",
     "애플리케이션.if02.executor": "Run"
   }
 }]]></component>
   <component name="RunManager">
+    <configuration name="BankAccountMain" type="Application" factoryName="Application" temporary="true" nameIsGenerated="true">
+      <option name="MAIN_CLASS_NAME" value="_16_Class.BankAccount.BankAccountMain" />
+      <module name="korit_java_study" />
+      <extension name="coverage">
+        <pattern>
+          <option name="PATTERN" value="_16_Class.BankAccount.*" />
+          <option name="ENABLED" value="true" />
+        </pattern>
+      </extension>
+      <method v="2">
+        <option name="Make" enabled="true" />
+      </method>
+    </configuration>
     <configuration name="For" type="Application" factoryName="Application" temporary="true" nameIsGenerated="true">
       <option name="MAIN_CLASS_NAME" value="_10_For.For" />
       <module name="korit_java_study" />
@@ -108,19 +124,6 @@
       <extension name="coverage">
         <pattern>
           <option name="PATTERN" value="_15_Overloading.*" />
-          <option name="ENABLED" value="true" />
-        </pattern>
-      </extension>
-      <method v="2">
-        <option name="Make" enabled="true" />
-      </method>
-    </configuration>
-    <configuration name="Scanner01" type="Application" factoryName="Application" temporary="true" nameIsGenerated="true">
-      <option name="MAIN_CLASS_NAME" value="_07_Scarnner.Scanner01" />
-      <module name="korit_java_study" />
-      <extension name="coverage">
-        <pattern>
-          <option name="PATTERN" value="_07_Scarnner.*" />
           <option name="ENABLED" value="true" />
         </pattern>
       </extension>
@@ -156,11 +159,11 @@
     </configuration>
     <recent_temporary>
       <list>
+        <item itemvalue="애플리케이션.BankAccountMain" />
         <item itemvalue="애플리케이션.For" />
         <item itemvalue="애플리케이션.OverLoading" />
         <item itemvalue="애플리케이션.SwitchCase" />
         <item itemvalue="애플리케이션.if02" />
-        <item itemvalue="애플리케이션.Scanner01" />
       </list>
     </recent_temporary>
   </component>

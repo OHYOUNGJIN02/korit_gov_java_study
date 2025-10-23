@@ -12,5 +12,7 @@ public class CarMain {
         //속성값 모두 주입된 객체
         Car sorrento = new Car("쏘렌토", 2025, "black");
         sorrento.showInfo();
+        sorrento.startCar();
+        sorrento.drive();
     }
 }
