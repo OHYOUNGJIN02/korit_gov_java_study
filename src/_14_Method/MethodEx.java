@@ -57,6 +57,12 @@ public class MethodEx {
         int [] nums = {1,3,7,9};
         System.out.println(contains(nums,8));
     }
+
+    public static int sum(int x, int y) {
+        return x + y;
+    }
+
+
 }
 
 
