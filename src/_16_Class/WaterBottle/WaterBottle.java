@@ -25,6 +25,7 @@ public class WaterBottle {
             System.out.println(" 현재 용량을 초과해서 마실 수 없습니다");
         } else {
             currentWater -= drink;
+            System.out.println(drink + "ml를 마셨습니다");
         }
 
     }
