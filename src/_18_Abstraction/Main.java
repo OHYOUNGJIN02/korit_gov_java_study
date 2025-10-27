@@ -32,5 +32,8 @@ public class Main {
         PhoneFactory phoneFactory2 = new PhoneFactory();
         phoneFactory2.setFactoryName("삼성 공장");
         phoneFactory2.produce("갤럭시S 25");
+
+        TabletFactory tabletFactory = new TabletFactory();
+
     }
 }

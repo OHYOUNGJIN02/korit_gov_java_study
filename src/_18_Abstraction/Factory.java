@@ -39,3 +39,9 @@ public abstract class Factory {
         System.out.println("공장 정보를 출력합니다.\n공장 이름 : " + factoryName);
     }
 }
+
+
+
+//시험 범위 책 : 개발자 환경 구축, 프로그래밍 언어 활용, 프로그래밍 언어 응용, 응용SW 기초기술 활용 시험 날짜는 11월 19일
+/*SQL 작성, SQL 활용 시험 날짜 - 12월 4일
+* */
