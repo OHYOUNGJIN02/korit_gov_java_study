@@ -17,14 +17,16 @@ public abstract class Shape {
         System.out.println("그리기 마무리");
     }
 
+
+    //꼭 구현해야하는 메소드 => 각 도형마다 넓이 공식이나 그리기
     public abstract double area();
 
     protected abstract void drawInternal();
 
     public void render(){
-        preDraw();
-        drawInternal();
-        postDraw();
+        preDraw(); //공통적 준비 단계
+        drawInternal(); //그리기 단계 - 자식이 구현
+        postDraw(); //공통적으로 마무리 단계
     }
 
     }

@@ -6,9 +6,10 @@
   <component name="ChangeListManager">
     <list default="true" id="76f4ec7b-a70b-4b77-9709-c5702ab1eb7f" name="변경" comment="ex">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/_18_Abstraction/Factory.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/_18_Abstraction/Factory.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/_18_Abstraction/Main.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/_18_Abstraction/Main.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/_18_Abstraction/TabletFactory.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/_18_Abstraction/TabletFactory.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/_20_Casting/Shape/Main.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/_20_Casting/Shape/Main.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/_20_Casting/Shape/Rectangle.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/_20_Casting/Shape/Rectangle.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/_20_Casting/Shape/Shape.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/_20_Casting/Shape/Shape.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/_20_Casting/Shape/Triangle.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/_20_Casting/Shape/Triangle.java" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -72,6 +73,7 @@
     "애플리케이션.For.executor": "Run",
     "애플리케이션.Forex.executor": "Run",
     "애플리케이션.Main.executor": "Run",
+    "애플리케이션.Main2.executor": "Run",
     "애플리케이션.MessageMain.executor": "Run",
     "애플리케이션.Method.executor": "Run",
     "애플리케이션.MethodEx.executor": "Run",
@@ -94,12 +96,13 @@
     "애플리케이션._20_Casting.Animals2.Main.executor": "Run",
     "애플리케이션._20_Casting.Main.executor": "Run",
     "애플리케이션._20_Casting.Shape.Main.executor": "Run",
+    "애플리케이션._21_Objects.Main.executor": "Run",
     "애플리케이션.if01.executor": "Run",
     "애플리케이션.if02.executor": "Run",
     "애플리케이션.main.executor": "Run"
   }
 }]]></component>
-  <component name="RunManager" selected="애플리케이션._20_Casting.Shape.Main">
+  <component name="RunManager">
     <configuration name="BankAccountMain" type="Application" factoryName="Application" temporary="true" nameIsGenerated="true">
       <option name="MAIN_CLASS_NAME" value="_16_Class.BankAccount.BankAccountMain" />
       <module name="korit_java_study" />
