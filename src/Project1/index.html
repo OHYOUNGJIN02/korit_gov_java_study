@@ -1,0 +1,161 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+    <meta charset="UTF-8">
+    <title>⚽ 프리미어리그 승점 자판기 ⚽</title>
+    <style>
+        body { font-family: 'Segoe UI', sans-serif; background: #f8f9fa; text-align: center; padding: 30px; }
+        h1 { color: #333; }
+        table { margin: 20px auto; border-collapse: collapse; width: 90%; background: white; border-radius: 10px; overflow: hidden; box-shadow: 0 0 10px rgba(0,0,0,0.1);}
+        th, td { border: 1px solid #ddd; padding: 10px; text-align: center; }
+        th { background: #212529; color: white; }
+        tr:nth-child(even) { background: #f2f2f2; }
+        input { padding: 5px 10px; margin: 5px; }
+        button { padding: 6px 10px; border: none; border-radius: 6px; cursor: pointer; }
+        button:hover { opacity: 0.9; }
+        .win { background: #28a745; color: white; }
+        .draw { background: #ffc107; color: black; }
+        .lose { background: #dc3545; color: white; }
+        .add { background: #007bff; color: white; }
+        .delete { background: #6c757d; color: white; }
+        img.team-logo { width: 30px; vertical-align: middle; margin-right: 8px; border-radius: 4px; }
+    </style>
+</head>
+<body>
+<h1>⚽ 프리미어리그 승점 계산기 ⚽</h1>
+
+<div>
+    <input id="teamName" type="text" placeholder="팀 이름 입력">
+    <button class="add" onclick="addTeam()">팀 추가</button>
+    <button class="delete" onclick="resetAll()">전체 리셋</button>
+</div>
+
+<table>
+    <thead>
+    <tr>
+        <th>순위</th>
+        <th>팀 이름</th>
+        <th>승</th>
+        <th>무</th>
+        <th>패</th>
+        <th>승점</th>
+        <th>조작</th>
+    </tr>
+    </thead>
+    <tbody id="tableBody"></tbody>
+</table>
+
+<script>
+    // 로고 URL 목록
+    const logos = {
+      "맨체스터 유나이티드": "https://upload.wikimedia.org/wikipedia/en/7/7a/Manchester_United_FC_crest.svg",
+      "맨체스터 시티": "https://upload.wikimedia.org/wikipedia/en/e/eb/Manchester_City_FC_badge.svg",
+      "첼시": "https://upload.wikimedia.org/wikipedia/en/c/cc/Chelsea_FC.svg",
+      "리버풀": "https://upload.wikimedia.org/wikipedia/en/0/0c/Liverpool_FC.svg",
+      "아스날": "https://upload.wikimedia.org/wikipedia/en/5/53/Arsenal_FC.svg",
+      "토트넘 훗스퍼": "https://upload.wikimedia.org/wikipedia/en/b/b4/Tottenham_Hotspur.svg",
+      "본머스": "https://upload.wikimedia.org/wikipedia/en/e/e5/AFC_Bournemouth_%282013%29.svg",
+      "크리스탈 펠리스": "https://upload.wikimedia.org/wikipedia/ko/f/f7/%ED%81%AC%EB%A6%AC%EC%8A%A4%ED%84%B8_%ED%8C%B0%EB%A6%AC%EC%8A%A4_%EB%A1%9C%EA%B3%A0.svg",
+      "선덜랜드": "https://upload.wikimedia.org/wikipedia/ko/2/29/%EC%84%A0%EB%8D%9C%EB%9E%9C%EB%93%9C_AFC_%EB%A1%9C%EA%B3%A0.svg",
+      "리즈 유나이티드": "https://upload.wikimedia.org/wikipedia/ko/7/77/%EB%A6%AC%EC%A6%88_%EC%9C%A0%EB%82%98%EC%9D%B4%ED%8B%B0%EB%93%9C_FC_%EB%A1%9C%EA%B3%A0.png",
+      "울버햄튼": "https://upload.wikimedia.org/wikipedia/en/f/fc/Wolverhampton_Wanderers.svg",
+      "번리": "https://upload.wikimedia.org/wikipedia/ko/4/43/%EB%B2%88%EB%A6%AC_FC_%EB%A1%9C%EA%B3%A0.svg",
+      "브랜트 포드": "https://upload.wikimedia.org/wikipedia/en/2/2a/Brentford_FC_crest.svg",
+      "풀럼": "https://upload.wikimedia.org/wikipedia/en/e/eb/Fulham_FC_%28shield%29.svg",
+      "뉴캐슬 유나이티드": "https://upload.wikimedia.org/wikipedia/en/5/56/Newcastle_United_Logo.svg",
+      "아스톤 빌라": "https://upload.wikimedia.org/wikipedia/ko/3/35/%EC%95%A0%EC%8A%A4%ED%84%B4_%EB%B9%8C%EB%9D%BC_FC_%EB%A1%9C%EA%B3%A0.png",
+      "브라이턴": "https://upload.wikimedia.org/wikipedia/en/f/fd/Brighton_%26_Hove_Albion_logo.svg",
+      "웨스트 햄 유나이티드": "https://upload.wikimedia.org/wikipedia/en/c/c2/West_Ham_United_FC_logo.svg",
+      "에버턴": "https://upload.wikimedia.org/wikipedia/en/7/7c/Everton_FC_logo.svg",
+      "노팅엄 포레스트": "https://upload.wikimedia.org/wikipedia/en/e/e5/Nottingham_Forest_F.C._logo.svg"
+    };
+
+    // 데이터 초기화 (또는 로컬 스토리지 불러오기)
+    let teams = JSON.parse(localStorage.getItem("teams")) || [
+      { name: "맨체스터 유나이티드", wins: 7, draws: 1, losses: 0, points: 22 },
+      { name: "맨체스터 시티", wins: 7, draws: 1, losses: 0, points: 22 },
+      { name: "첼시", wins: 5, draws: 2, losses: 1, points: 17 },
+      { name: "리버풀", wins: 6, draws: 2, losses: 1, points: 20 },
+      { name: "아스날", wins: 7, draws: 2, losses: 1, points: 23 },
+      { name: "토트넘 훗스퍼", wins: 5, draws: 2, losses: 4, points: 17 },
+    ];
+
+    function renderTable() {
+      teams.sort((a, b) => b.points - a.points);
+      const tbody = document.getElementById("tableBody");
+      tbody.innerHTML = "";
+
+      teams.forEach((t, i) => {
+        const logoUrl = logos[t.name] || "https://upload.wikimedia.org/wikipedia/commons/6/65/No-Image-Placeholder.svg";
+        const row = `
+          <tr>
+            <td>${i + 1}</td>
+            <td>
+              <img src="${logoUrl}" alt="${t.name} 로고" class="team-logo">
+              ${t.name}
+            </td>
+            <td>${t.wins}</td>
+            <td>${t.draws}</td>
+            <td>${t.losses}</td>
+            <td>${t.points}</td>
+            <td>
+              <button class="win" onclick="recordWin(${i})">승</button>
+              <button class="draw" onclick="recordDraw(${i})">무</button>
+              <button class="lose" onclick="recordLoss(${i})">패</button>
+              <button class="delete" onclick="deleteTeam(${i})">삭제</button>
+            </td>
+          </tr>`;
+        tbody.insertAdjacentHTML("beforeend", row);
+      });
+
+      localStorage.setItem("teams", JSON.stringify(teams));
+    }
+
+    function recordWin(index) {
+      teams[index].wins++;
+      teams[index].points += 3;
+      renderTable();
+    }
+
+    function recordDraw(index) {
+      teams[index].draws++;
+      teams[index].points += 1;
+      renderTable();
+    }
+
+    function recordLoss(index) {
+      teams[index].losses++;
+      renderTable();
+    }
+
+    function addTeam() {
+      const nameInput = document.getElementById("teamName");
+      const name = nameInput.value.trim();
+      if (!name) return alert("팀 이름을 입력하세요!");
+      if (teams.some(t => t.name === name)) return alert("이미 존재하는 팀입니다!");
+      teams.push({ name, wins: 0, draws: 0, losses: 0, points: 0 });
+      nameInput.value = "";
+      renderTable();
+    }
+
+    function deleteTeam(index) {
+      if (confirm(`${teams[index].name} 팀을 정말 삭제하시겠습니까?`)) {
+        teams.splice(index, 1);
+        renderTable();
+      }
+    }
+
+    function resetAll() {
+      if (confirm("⚠️ 모든 팀 데이터를 초기화하시겠습니까?")) {
+        teams = [];
+        localStorage.removeItem("teams");
+        renderTable();
+      }
+    }
+
+    renderTable();
+</script>
+</body>
+</html>
+
+

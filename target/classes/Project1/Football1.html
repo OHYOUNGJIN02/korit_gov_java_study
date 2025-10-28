@@ -1,0 +1,59 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+    <meta charset="UTF-8">
+    <title>⚽ 프리미어리그 순위표 ⚽</title>
+    <style>
+        body { font-family: 'Segoe UI', sans-serif; text-align: center; background: #f8f9fa; padding: 30px; }
+        table { margin: 0 auto; border-collapse: collapse; width: 80%; background: white; border-radius: 10px; overflow: hidden; box-shadow: 0 0 10px rgba(0,0,0,0.1);}
+        th, td { border: 1px solid #ddd; padding: 10px; }
+        th { background-color: #343a40; color: white; }
+        tr:nth-child(even) { background-color: #f2f2f2; }
+        h1 { color: #343a40; }
+    </style>
+</head>
+<body>
+<h1>⚽ 프리미어리그 순위표 ⚽</h1>
+<table>
+    <thead>
+    <tr>
+        <th>순위</th>
+        <th>팀 이름</th>
+        <th>승</th>
+        <th>무</th>
+        <th>패</th>
+        <th>승점</th>
+    </tr>
+    </thead>
+    <tbody id="tableBody"></tbody>
+</table>
+
+<script>
+    // 자바 로직 결과를 반영한 데이터 (하드코딩)
+    const teams = [
+      { name: "맨체스터 유나이티드", wins: 8, draws: 2, losses: 1, points: 26 },
+      { name: "맨체스터 시티", wins: 7, draws: 2, losses: 1, points: 23 },
+      { name: "리버풀", wins: 6, draws: 2, losses: 3, points: 20 },
+      { name: "첼시", wins: 6, draws: 2, losses: 1, points: 20 },
+      { name: "아스날", wins: 0, draws: 0, losses: 0, points: 0 },
+      { name: "토트넘 훗스퍼", wins: 0, draws: 0, losses: 0, points: 0 },
+    ];
+
+    // 승점 기준으로 정렬
+    teams.sort((a, b) => b.points - a.points);
+
+    const tbody = document.getElementById("tableBody");
+    teams.forEach((t, i) => {
+      const row = `<tr>
+        <td>${i + 1}</td>
+        <td>${t.name}</td>
+        <td>${t.wins}</td>
+        <td>${t.draws}</td>
+        <td>${t.losses}</td>
+        <td>${t.points}</td>
+      </tr>`;
+      tbody.insertAdjacentHTML("beforeend", row);
+    });
+</script>
+</body>
+</html>
