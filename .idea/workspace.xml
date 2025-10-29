@@ -6,9 +6,7 @@
   <component name="ChangeListManager">
     <list default="true" id="76f4ec7b-a70b-4b77-9709-c5702ab1eb7f" name="변경" comment="ex">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/Project1/index.html" beforeDir="false" afterPath="$PROJECT_DIR$/src/Project1/index.html" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/classes/Project1/index.html" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/Project1/index.html" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/classes/_23_Static/Person/Main.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/_23_Static/Person/Main.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/_25_LayeredArchitecture/entity/User.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/_25_LayeredArchitecture/entity/User.java" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -100,6 +98,7 @@
     "애플리케이션.StringCompare.executor": "Run",
     "애플리케이션.StudentMain.executor": "Run",
     "애플리케이션.SwitchCase.executor": "Run",
+    "애플리케이션.TodoListMain.executor": "Run",
     "애플리케이션.TypeCasting.executor": "Run",
     "애플리케이션.UserMain.executor": "Run",
     "애플리케이션.VariablesNaming.executor": "Run",
