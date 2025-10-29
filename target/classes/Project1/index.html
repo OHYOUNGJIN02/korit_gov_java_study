@@ -2,17 +2,14 @@
 <html lang="ko">
 <head>
     <meta charset="UTF-8">
-    <title>⚽ 프리미어리그 승점 자판기 ⚽</title>
+    <title>⚽ 프리미어리그 실시간 순위표 ⚽</title>
     <style>
         body {
           font-family: 'Segoe UI', sans-serif;
-          background: #f8f9fa;
+          background: #fff;
           text-align: center;
           padding: 30px;
-        }
-        header {
-          text-align: center;
-          margin-bottom: 20px;
+          color: #333;
         }
         header img {
           width: 120px;
@@ -20,17 +17,18 @@
           margin: 0 auto 10px;
         }
         h1 {
-          color: #333;
           margin: 0;
+          color: #222;
         }
         table {
-          margin: 20px auto;
-          border-collapse: collapse;
+          margin: 25px auto;
+          border-collapse: separate;
+          border-spacing: 0;
           width: 90%;
           background: white;
-          border-radius: 10px;
+          border-radius: 15px;
+          box-shadow: 0 0 15px rgba(0,0,0,0.1);
           overflow: hidden;
-          box-shadow: 0 0 10px rgba(0,0,0,0.1);
         }
         th, td {
           border: 1px solid #ddd;
@@ -42,176 +40,114 @@
           color: white;
         }
         tr:nth-child(even) {
-          background: #f2f2f2;
+          background: #f9f9f9;
         }
-        input {
-          padding: 5px 10px;
-          margin: 5px;
-        }
-        button {
-          padding: 6px 10px;
-          border: none;
-          border-radius: 6px;
-          cursor: pointer;
-        }
-        button:hover {
-          opacity: 0.9;
-        }
-        .win { background: #28a745; color: white; }
-        .draw { background: #ffc107; color: black; }
-        .lose { background: #dc3545; color: white; }
-        .add { background: #007bff; color: white; }
-        .delete { background: #6c757d; color: white; }
-
+        .champions { background-color: #d8e8ff !important; }
+        .europa { background-color: #ffe4cc !important; }
+        .conference { background-color: #dfffe2 !important; }
+        .relegation { background-color: #ffcccc !important; }
         img.team-logo {
-          width: 30px;
+          width: 28px;
           vertical-align: middle;
           margin-right: 8px;
           border-radius: 4px;
+        }
+        .league-icon {
+          width: 20px;
+          vertical-align: middle;
+          margin-left: 6px;
+        }
+        .trophy-icon {
+          width: 22px;
+          vertical-align: middle;
+          margin-left: 6px;
         }
     </style>
 </head>
 <body>
 <header>
-    <img src="https://upload.wikimedia.org/wikipedia/en/f/f2/Premier_League_Logo.svg" alt="프리미어리그 로고">
-    <h1>⚽ 프리미어리그 승점 계산기 ⚽</h1>
+    <img src="https://upload.wikimedia.org/wikipedia/en/f/f2/Premier_League_Logo.svg" alt="Premier League Logo">
+    <h1>⚽ 프리미어리그 실시간 순위표 ⚽</h1>
 </header>
 
-<div>
-    <input id="teamName" type="text" placeholder="팀 이름 입력">
-    <button class="add" onclick="addTeam()">팀 추가</button>
-    <button class="delete" onclick="resetAll()">전체 리셋</button>
-</div>
+<p>📡 실시간 EPL 순위를 불러오는 중...</p>
 
-<table>
+<table id="leagueTable" style="display:none;">
     <thead>
     <tr>
         <th>순위</th>
         <th>팀 이름</th>
+        <th>경기</th>
         <th>승</th>
         <th>무</th>
         <th>패</th>
         <th>승점</th>
-        <th>조작</th>
     </tr>
     </thead>
     <tbody id="tableBody"></tbody>
 </table>
 
 <script>
-    const logos = {
-      "맨체스터 유나이티드": "https://upload.wikimedia.org/wikipedia/en/7/7a/Manchester_United_FC_crest.svg",
-      "맨체스터 시티": "https://upload.wikimedia.org/wikipedia/en/e/eb/Manchester_City_FC_badge.svg",
-      "첼시": "https://upload.wikimedia.org/wikipedia/en/c/cc/Chelsea_FC.svg",
-      "리버풀": "https://upload.wikimedia.org/wikipedia/en/0/0c/Liverpool_FC.svg",
-      "아스날": "https://upload.wikimedia.org/wikipedia/en/5/53/Arsenal_FC.svg",
-      "토트넘 훗스퍼": "https://upload.wikimedia.org/wikipedia/en/b/b4/Tottenham_Hotspur.svg",
-      "본머스": "https://upload.wikimedia.org/wikipedia/en/e/e5/AFC_Bournemouth_%282013%29.svg",
-      "크리스탈 팰리스": "https://upload.wikimedia.org/wikipedia/ko/f/f7/%ED%81%AC%EB%A6%AC%EC%8A%A4%ED%84%B8_%ED%8C%B0%EB%A6%AC%EC%8A%A4_%EB%A1%9C%EA%B3%A0.svg",
-      "선덜랜드": "https://upload.wikimedia.org/wikipedia/ko/2/29/%EC%84%A0%EB%8D%9C%EB%9E%9C%EB%93%9C_AFC_%EB%A1%9C%EA%B3%A0.svg",
-      "리즈 유나이티드": "https://upload.wikimedia.org/wikipedia/ko/7/77/%EB%A6%AC%EC%A6%88_%EC%9C%A0%EB%82%98%EC%9D%B4%ED%8B%B0%EB%93%9C_FC_%EB%A1%9C%EA%B3%A0.png",
-      "울버햄튼": "https://upload.wikimedia.org/wikipedia/en/f/fc/Wolverhampton_Wanderers.svg",
-      "번리": "https://upload.wikimedia.org/wikipedia/ko/4/43/%EB%B2%88%EB%A6%AC_FC_%EB%A1%9C%EA%B3%A0.svg",
-      "브랜트 포드": "https://upload.wikimedia.org/wikipedia/en/2/2a/Brentford_FC_crest.svg",
-      "풀럼": "https://upload.wikimedia.org/wikipedia/en/e/eb/Fulham_FC_%28shield%29.svg",
-      "뉴캐슬 유나이티드": "https://upload.wikimedia.org/wikipedia/en/5/56/Newcastle_United_Logo.svg",
-      "아스톤 빌라": "https://upload.wikimedia.org/wikipedia/ko/3/35/%EC%95%A0%EC%8A%A4%ED%84%B4_%EB%B9%8C%EB%9D%BC_FC_%EB%A1%9C%EA%B3%A0.png",
-      "브라이턴": "https://upload.wikimedia.org/wikipedia/en/f/fd/Brighton_%26_Hove_Albion_logo.svg",
-      "웨스트 햄 유나이티드": "https://upload.wikimedia.org/wikipedia/en/c/c2/West_Ham_United_FC_logo.svg",
-      "에버턴": "https://upload.wikimedia.org/wikipedia/en/7/7c/Everton_FC_logo.svg",
-      "노팅엄 포레스트": "https://upload.wikimedia.org/wikipedia/en/e/e5/Nottingham_Forest_F.C._logo.svg"
-    };
+    const API_KEY = "c93ae110e28640269ad20e6316ab68b3";
+    const API_URL = "https://api.football-data.org/v4/competitions/PL/standings";
+    const PROXY = "https://corsproxy.io/?";
 
-    let teams = [
-      // 예시 데이터입니다 — 실제 승점/기록은 공식 사이트에서 확인하여 수정해주세요
-      { name: "맨체스터 시티", wins: 7, draws: 1, losses: 1, points: 22 },
-      { name: "아스날", wins: 7, draws: 2, losses: 0, points: 23 },
-      { name: "리버풀", wins: 6, draws: 2, losses: 1, points: 20 },
-      { name: "맨체스터 유나이티드", wins: 6, draws: 1, losses: 2, points: 19 },
-      { name: "첼시", wins: 5, draws: 2, losses: 2, points: 17 },
-      { name: "토트넘 훗스퍼", wins: 5, draws: 1, losses: 3, points: 16 },
-      { name: "뉴캐슬 유나이티드", wins: 5, draws: 2, losses: 2, points: 17 },
-      { name: "아스톤 빌라", wins: 4, draws: 3, losses: 2, points: 15 },
-      { name: "웨스트 햄 유나이티드", wins: 4, draws: 2, losses: 3, points: 14 },
-      { name: "브라이턴", wins: 4, draws: 2, losses: 3, points: 14 },
-      { name: "크리스탈 팰리스", wins: 3, draws: 3, losses: 3, points: 12 },
-      { name: "브랜트 포드", wins: 3, draws: 2, losses: 4, points: 11 },
-      { name: "풀럼", wins: 3, draws: 2, losses: 4, points: 11 },
-      { name: "울버햄튼", wins: 3, draws: 1, losses: 5, points: 10 },
-      { name: "본머스", wins: 2, draws: 3, losses: 4, points: 9 },
-      { name: "노팅엄 포레스트", wins: 2, draws: 3, losses: 4, points: 9 },
-      { name: "에버턴", wins: 2, draws: 2, losses: 5, points: 8 },
-      { name: "리즈 유나이티드", wins: 2, draws: 1, losses: 6, points: 7 },
-      { name: "선덜랜드", wins: 1, draws: 3, losses: 5, points: 6 },
-      { name: "번리", wins: 0, draws: 2, losses: 7, points: 2 }
-    ];
+    async function loadEPL() {
+      try {
+        const res = await fetch(PROXY + API_URL, {
+          headers: { "X-Auth-Token": API_KEY }
+        });
+        if (!res.ok) throw new Error("API 요청 실패: " + res.status);
+        const data = await res.json();
+        const teams = data.standings[0].table;
 
-    function renderTable() {
-      teams.sort((a, b) => b.points - a.points);
-      const tbody = document.getElementById("tableBody");
-      tbody.innerHTML = "";
+        const tbody = document.getElementById("tableBody");
+        const table = document.getElementById("leagueTable");
+        const loadingText = document.querySelector("p");
 
-      teams.forEach((t, i) => {
-        const logoUrl = logos[t.name] || "https://upload.wikimedia.org/wikipedia/commons/6/65/No-Image-Placeholder.svg";
-        const row = `
-          <tr>
-            <td>${i + 1}</td>
-            <td><img src="${logoUrl}" alt="${t.name} 로고" class="team-logo">${t.name}</td>
-            <td>${t.wins}</td>
-            <td>${t.draws}</td>
-            <td>${t.losses}</td>
-            <td>${t.points}</td>
-            <td>
-              <button class="win" onclick="recordWin(${i})">승</button>
-              <button class="draw" onclick="recordDraw(${i})">무</button>
-              <button class="lose" onclick="recordLoss(${i})">패</button>
-              <button class="delete" onclick="deleteTeam(${i})">삭제</button>
-            </td>
-          </tr>`;
-        tbody.insertAdjacentHTML("beforeend", row);
-      });
+        tbody.innerHTML = "";
+        teams.forEach(t => {
+          const rank = t.position;
+          let rowClass = "";
+          let badge = "";
 
-      localStorage.setItem("teams", JSON.stringify(teams));
-    }
+          if (rank === 1) {
+            rowClass = "champions";
+            badge = `<img class="trophy-icon" src="images/epl.png" alt="Trophy">`;
+          } else if (rank >= 2 && rank <= 4) {
+            rowClass = "champions";
+            badge = `<img class="league-icon" src="https://upload.wikimedia.org/wikipedia/ko/2/23/UEFA_%EC%B1%94%ED%94%BC%EC%96%B8%EC%8A%A4%EB%A6%AC%EA%B7%B8_%EB%A1%9C%EA%B3%A0.svg" alt="UCL">`;
+          } else if (rank === 5) {
+            rowClass = "europa";
+            badge = `<img class="league-icon" src="https://upload.wikimedia.org/wikipedia/commons/1/1b/UEFA_Europa_League_logo_%282024_version%29.svg" alt="UEL">`;
+          } else if (rank === 6) {
+            rowClass = "conference";
+            badge = `<img class="league-icon" src="https://upload.wikimedia.org/wikipedia/commons/4/4b/UEFA_Conference_League_full_logo_%282024_version%29.svg" alt="UECL">`;
+          }
 
-    function recordWin(index) {
-      teams[index].wins++;
-      teams[index].points += 3;
-      renderTable();
-    }
-    function recordDraw(index) {
-      teams[index].draws++;
-      teams[index].points++;
-      renderTable();
-    }
-    function recordLoss(index) {
-      teams[index].losses++;
-      renderTable();
-    }
-    function addTeam() {
-      const nameInput = document.getElementById("teamName");
-      const name = nameInput.value.trim();
-      if (!name) return alert("팀 이름을 입력하세요!");
-      if (teams.some(t => t.name === name)) return alert("이미 존재하는 팀입니다!");
-      teams.push({ name, wins:0, draws:0, losses:0, points:0 });
-      nameInput.value = "";
-      renderTable();
-    }
-    function deleteTeam(index) {
-      if (confirm(`${teams[index].name} 팀을 정말 삭제하시겠습니까?`)) {
-        teams.splice(index, 1);
-        renderTable();
+          const row = `
+            <tr class="${rowClass}">
+              <td>${rank}${badge}</td>
+              <td><img class="team-logo" src="${t.team.crest}" alt="">${t.team.name}</td>
+              <td>${t.playedGames}</td>
+              <td>${t.won}</td>
+              <td>${t.draw}</td>
+              <td>${t.lost}</td>
+              <td>${t.points}</td>
+            </tr>`;
+          tbody.insertAdjacentHTML("beforeend", row);
+        });
+
+        loadingText.style.display = "none";
+        table.style.display = "table";
+
+      } catch (err) {
+        document.querySelector("p").innerText = "❌ 데이터를 불러오지 못했습니다.";
+        console.error(err);
       }
     }
-    function resetAll() {
-      if (confirm("⚠️ 모든 팀 데이터를 초기화하시겠습니까?")) {
-        teams = [];
-        localStorage.removeItem("teams");
-        renderTable();
-      }
-    }
-
-    renderTable();
+    loadEPL();
 </script>
 </body>
 </html>
+

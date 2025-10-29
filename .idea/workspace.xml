@@ -8,8 +8,7 @@
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/Project1/index.html" beforeDir="false" afterPath="$PROJECT_DIR$/src/Project1/index.html" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/target/classes/Project1/index.html" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/Project1/index.html" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/classes/_22_Bean/Main.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/_22_Bean/Main.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/classes/_22_Bean/UserEntityLombok.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/_22_Bean/UserEntityLombok.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/_23_Static/Person/Main.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/_23_Static/Person/Main.class" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -21,6 +20,7 @@
       <list>
         <option value="Interface" />
         <option value="HTML File" />
+        <option value="package-info" />
         <option value="Class" />
       </list>
     </option>
@@ -73,6 +73,7 @@
     "settings.editor.selected.configurable": "reference.projectsettings.compiler.javacompiler",
     "애플리케이션.ArrayEx.executor": "Run",
     "애플리케이션.BankAccountMain.executor": "Run",
+    "애플리케이션.BookMain.executor": "Run",
     "애플리케이션.CarMain.executor": "Run",
     "애플리케이션.Counter.executor": "Run",
     "애플리케이션.DogMain.executor": "Run",
@@ -85,6 +86,7 @@
     "애플리케이션.Method.executor": "Run",
     "애플리케이션.MethodEx.executor": "Run",
     "애플리케이션.MultiArrayLoop.executor": "Run",
+    "애플리케이션.NonStaticMemberMain.executor": "Run",
     "애플리케이션.Operator.executor": "Run",
     "애플리케이션.OverLoading.executor": "Run",
     "애플리케이션.OverloadingEx.executor": "Run",
@@ -99,6 +101,7 @@
     "애플리케이션.StudentMain.executor": "Run",
     "애플리케이션.SwitchCase.executor": "Run",
     "애플리케이션.TypeCasting.executor": "Run",
+    "애플리케이션.UserMain.executor": "Run",
     "애플리케이션.VariablesNaming.executor": "Run",
     "애플리케이션.WaterBottleMain.executor": "Run",
     "애플리케이션._19_Interface.Zookeeper.Main.executor": "Run",
