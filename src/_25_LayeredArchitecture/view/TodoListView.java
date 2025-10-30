@@ -1,5 +1,7 @@
 package _25_LayeredArchitecture.view;
 
+import _25_LayeredArchitecture.dto.SigninReqDto;
+import _25_LayeredArchitecture.dto.SignupReqDto;
 import _25_LayeredArchitecture.entity.User;
 import _25_LayeredArchitecture.service.UserService;
 
@@ -34,12 +36,18 @@ public class TodoListView {
                 break;
             }else if ("1".equals(cmd)){
                 //TodoList 관리
+                if (principal == null){
+                    System.out.println("로그인 후 사용 가능합니다.");
+                    continue;
+                }
             }else if ("2".equals(cmd) && principal == null) {
                 //회원가입
+                signUpView();
             }else if ("2".equals(cmd) && principal != null){
                 //로그아웃
             }else if ("3".equals(cmd) && principal == null){
                 //로그인
+                signinView();
             }else {
                 System.out.println("잘못 입력하였습니다.");
             }
@@ -47,13 +55,47 @@ public class TodoListView {
     }
 
     //회원가입 뷰
-    void singuView(){
+    void signUpView(){
         System.out.println("[ 회원가입 ]");
         String username = null;
         while (true){
             System.out.print("USERNAME : ");
             username = scanner.nextLine();
+            if (!userService.isDuplicatedUsername(username)){ //중복이 되지 않았을때
+                System.out.println("사용 가능한 username 입니다.");
+                break;
+            }
+            System.out.println("이미 존재하는 username 입니다.");
             //username 중복 확인을 위해 while이 포함
+
+            System.out.print("password >> ");
+            String password = scanner.nextLine();
+
+            System.out.print("name >> ");
+            String name = scanner.nextLine();
+
+            SignupReqDto signupReqDto =  new SignupReqDto(username, password, name);
+            //userService의 회원가입 로직에 signupReqDto 전달
+            userService.signup(signupReqDto);
+            System.out.println("========회원가입 완료=========");
+            //조회할 수 있는 로직
+            userService.printAllUserList();
         }
+    }
+
+    public void signinView(){
+        System.out.println("[로그인]");
+        System.out.print("username >> ");
+        String username = scanner.nextLine();
+        System.out.print("password >> ");
+        String password = scanner.nextLine();
+        SigninReqDto signinReqDto1 = new SigninReqDto(username,password);
+        User foundUser = userService.signin(signinReqDto1);
+        if (foundUser == null){
+            System.out.println("사용자 정보를 다시 확인해주세요.");
+            return;
+        }
+        principal = foundUser;
+        System.out.println("로그인 성공.");
     }
 }

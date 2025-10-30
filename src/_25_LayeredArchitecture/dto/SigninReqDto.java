@@ -1,7 +1,5 @@
 package _25_LayeredArchitecture.dto;
 
-
-import _25_LayeredArchitecture.entity.User;
 import lombok.AllArgsConstructor;
 import lombok.Getter;
 import lombok.Setter;
@@ -12,7 +10,8 @@ import lombok.ToString;
 @Setter
 @ToString
 
-public class TodoRegisterDto {
-    private String contents;
-    private User user;
+public class SigninReqDto {
+    private String username;
+    private String password;
 }
+

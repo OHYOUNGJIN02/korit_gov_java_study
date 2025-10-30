@@ -10,6 +10,7 @@
           text-align: center;
           padding: 30px;
           color: #333;
+          transition: background 0.4s, color 0.4s;
         }
         header img {
           width: 120px;
@@ -19,6 +20,7 @@
         h1 {
           margin: 0;
           color: #222;
+          transition: color 0.4s;
         }
         table {
           margin: 25px auto;
@@ -29,11 +31,13 @@
           border-radius: 15px;
           box-shadow: 0 0 15px rgba(0,0,0,0.1);
           overflow: hidden;
+          transition: background 0.4s, color 0.4s, box-shadow 0.4s;
         }
         th, td {
           border: 1px solid #ddd;
           padding: 10px;
           text-align: center;
+          transition: color 0.4s;
         }
         th {
           background: #212529;
@@ -42,25 +46,74 @@
         tr:nth-child(even) {
           background: #f9f9f9;
         }
+
+        /* 각 등급 색상 */
         .champions { background-color: #d8e8ff !important; }
         .europa { background-color: #ffe4cc !important; }
         .conference { background-color: #dfffe2 !important; }
-        .relegation { background-color: #ffcccc !important; } /* 🔴 하위 3팀 색상 */
+        .relegation { background-color: #ffcccc !important; }
+
         img.team-logo {
           width: 28px;
           vertical-align: middle;
           margin-right: 8px;
           border-radius: 4px;
         }
-        .league-icon {
-          width: 20px;
+        .league-icon, .trophy-icon {
           vertical-align: middle;
           margin-left: 6px;
         }
-        .trophy-icon {
-          width: 22px;
-          vertical-align: middle;
-          margin-left: 6px;
+        .league-icon { width: 20px; }
+        .trophy-icon { width: 22px; }
+
+        /* 🌙 다크모드 스타일 */
+        body.dark-mode {
+          background: #121212;
+          color: #f1f1f1;
+        }
+        body.dark-mode h1 {
+          color: #fff;
+        }
+        body.dark-mode table {
+          background: #1e1e1e;
+          color: #f1f1f1;
+          box-shadow: 0 0 15px rgba(255,255,255,0.1);
+        }
+        body.dark-mode th {
+          background: #333;
+          color: #fff;
+        }
+        body.dark-mode tr:nth-child(even) {
+          background: #222;
+        }
+        body.dark-mode td {
+          color: #fff;
+        }
+
+        /* 다크모드 전환 시 등급 배경도 어둡게 변경 */
+        body.dark-mode .champions { background-color: #2b3b55 !important; }
+        body.dark-mode .europa { background-color: #554030 !important; }
+        body.dark-mode .conference { background-color: #304d35 !important; }
+        body.dark-mode .relegation { background-color: #552828 !important; }
+
+        /* 🌙 버튼 스타일 */
+        #darkModeBtn {
+          position: fixed;
+          top: 20px;
+          right: 25px;
+          background: #212529;
+          color: white;
+          border: none;
+          padding: 10px 16px;
+          border-radius: 20px;
+          cursor: pointer;
+          font-size: 14px;
+          transition: background 0.3s, transform 0.2s;
+          z-index: 999;
+        }
+        #darkModeBtn:hover {
+          background: #444;
+          transform: scale(1.05);
         }
     </style>
 </head>
@@ -69,6 +122,9 @@
     <img src="https://upload.wikimedia.org/wikipedia/en/f/f2/Premier_League_Logo.svg" alt="Premier League Logo">
     <h1>⚽ 프리미어리그 실시간 순위표 ⚽</h1>
 </header>
+
+<!-- 🌙 다크모드 버튼 -->
+<button id="darkModeBtn">🌙 다크모드</button>
 
 <p>📡 실시간 EPL 순위를 불러오는 중...</p>
 
@@ -114,7 +170,6 @@
           let rowClass = "";
           let badge = "";
 
-          // 🏆 상위권 표시
           if (rank === 1) {
             rowClass = "champions";
             badge = `<img class="trophy-icon" src="https://upload.wikimedia.org/wikipedia/commons/2/2c/Premier_league_trophy_icon.png" alt="Trophy">`;
@@ -127,9 +182,7 @@
           } else if (rank === 6) {
             rowClass = "conference";
             badge = `<img class="league-icon" src="https://upload.wikimedia.org/wikipedia/commons/4/4b/UEFA_Conference_League_full_logo_%282024_version%29.svg" alt="UECL">`;
-          }
-          // 🔴 하위 3팀 강등권 표시
-          else if (rank >= 18) {
+          } else if (rank >= 18) {
             rowClass = "relegation";
           }
 
@@ -157,9 +210,20 @@
         console.error(err);
       }
     }
+
     loadEPL();
+
+    // 🌙 다크모드 토글 기능
+    const darkBtn = document.getElementById("darkModeBtn");
+    darkBtn.addEventListener("click", () => {
+      document.body.classList.toggle("dark-mode");
+
+      if (document.body.classList.contains("dark-mode")) {
+        darkBtn.textContent = "☀️ 라이트모드";
+      } else {
+        darkBtn.textContent = "🌙 다크모드";
+      }
+    });
 </script>
 </body>
 </html>
-
-
