@@ -11,6 +11,8 @@ public class TodoListView {
     private Scanner scanner;
     private User principal;
     private UserService userService;
+    private TodoList todoList;
+
 
     public TodoListView(UserService userService){
         scanner = new Scanner(System.in);
@@ -39,12 +41,16 @@ public class TodoListView {
                 if (principal == null){
                     System.out.println("로그인 후 사용 가능합니다.");
                     continue;
+                }else {
+                    todoListMenuView();
                 }
             }else if ("2".equals(cmd) && principal == null) {
                 //회원가입
                 signUpView();
             }else if ("2".equals(cmd) && principal != null){
                 //로그아웃
+                principal = null;
+                System.out.println("로그아웃 완료.");
             }else if ("3".equals(cmd) && principal == null){
                 //로그인
                 signinView();
@@ -58,15 +64,17 @@ public class TodoListView {
     void signUpView(){
         System.out.println("[ 회원가입 ]");
         String username = null;
-        while (true){
+        while (true) {
             System.out.print("USERNAME : ");
             username = scanner.nextLine();
-            if (!userService.isDuplicatedUsername(username)){ //중복이 되지 않았을때
+            if (!userService.isDuplicatedUsername(username)) { //중복이 되지 않았을때
                 System.out.println("사용 가능한 username 입니다.");
                 break;
             }
             System.out.println("이미 존재하는 username 입니다.");
             //username 중복 확인을 위해 while이 포함
+
+        } {
 
             System.out.print("password >> ");
             String password = scanner.nextLine();
@@ -98,4 +106,36 @@ public class TodoListView {
         principal = foundUser;
         System.out.println("로그인 성공.");
     }
-}
+
+    public void todoListMenuView() {
+        while (true) {
+            System.out.println("[ TodoList Menu ]");
+            System.out.println("1. Todo 등록하기");
+            System.out.println("2.Todo 조회하기");
+            System.out.println("b. 뒤로가기");
+            System.out.print(">>>");
+            String cmd = scanner.nextLine();
+
+            if ("b".equals(cmd)) {
+                break;
+            } else if ("1".equals(cmd)) {
+                System.out.println("[Todo 등록]");
+                String todo = scanner.nextLine();
+                //LocalDateTime.now() 현재 시간 출력
+            } else if ("2".equals(cmd)) {
+                System.out.println("[ Todo 조회 ]");
+                if (todoList != null);
+                System.out.println(t"Todo가 없습니다.");
+                if (todoList)
+
+
+            } else {
+                System.out.println("잘못 입력하였습니다.");
+
+            }
+
+
+
+        }
+
+    }}
