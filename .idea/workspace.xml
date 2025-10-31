@@ -6,15 +6,6 @@
   <component name="ChangeListManager">
     <list default="true" id="76f4ec7b-a70b-4b77-9709-c5702ab1eb7f" name="변경" comment="ex">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/_25_LayeredArchitecture/TodoListMain.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/_25_LayeredArchitecture/TodoListMain.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/_25_LayeredArchitecture/dto/TodoRegisterReqDto.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/_25_LayeredArchitecture/dto/TodoRegisterReqDto.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/_25_LayeredArchitecture/entity/Todo.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/_25_LayeredArchitecture/entity/Todo.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/_25_LayeredArchitecture/service/UserService.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/_25_LayeredArchitecture/service/UserService.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/_25_LayeredArchitecture/view/TodoList.java" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/_25_LayeredArchitecture/view/TodoListView.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/_25_LayeredArchitecture/view/TodoListView.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/classes/_25_LayeredArchitecture/TodoListMain.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/_25_LayeredArchitecture/TodoListMain.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/classes/_25_LayeredArchitecture/service/UserService.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/_25_LayeredArchitecture/service/UserService.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/classes/_25_LayeredArchitecture/view/TodoListView.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/_25_LayeredArchitecture/view/TodoListView.class" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -122,6 +113,8 @@
     "애플리케이션._26_Singleton.AppConfig.Main.executor": "Run",
     "애플리케이션._26_Singleton.ex1.Main.executor": "Run",
     "애플리케이션._26_Singleton.main.executor": "Run",
+    "애플리케이션._27_Generic.Main.executor": "Run",
+    "애플리케이션._28_WildCard.Main.executor": "Run",
     "애플리케이션.if01.executor": "Run",
     "애플리케이션.if02.executor": "Run",
     "애플리케이션.main.executor": "Run"
