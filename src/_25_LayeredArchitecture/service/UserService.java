@@ -4,7 +4,6 @@ import _25_LayeredArchitecture.dto.SigninReqDto;
 import _25_LayeredArchitecture.dto.SignupReqDto;
 import _25_LayeredArchitecture.entity.User;
 import _25_LayeredArchitecture.repository.UserList;
-import _25_LayeredArchitecture.view.TodoList;
 
 public class UserService {
     private UserList userList;
