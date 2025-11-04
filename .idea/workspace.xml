@@ -5,8 +5,16 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="76f4ec7b-a70b-4b77-9709-c5702ab1eb7f" name="변경" comment="ex">
+      <change afterPath="$PROJECT_DIR$/src/_32_LayerdArchitecture2/Main.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/_30_json/Json01.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/_30_json/Json01.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/_25_LayeredArchitecture/TodoListMain.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/_25_LayeredArchitecture/TodoListMain.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/_25_LayeredArchitecture/dto/SigninReqDto.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/_25_LayeredArchitecture/dto/SigninReqDto.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/_25_LayeredArchitecture/dto/SignupReqDto.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/_25_LayeredArchitecture/dto/SignupReqDto.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/_25_LayeredArchitecture/view/TodoListView.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/_25_LayeredArchitecture/view/TodoListView.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/_32_LayerdArchitecture/Main.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/_25_LayeredArchitecture/TodoListMain.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/_25_LayeredArchitecture/view/TodoListView.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/_32_LayerdArchitecture/Main.class" beforeDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -16,9 +24,9 @@
   <component name="FileTemplateManagerImpl">
     <option name="RECENT_TEMPLATES">
       <list>
-        <option value="Interface" />
         <option value="HTML File" />
         <option value="package-info" />
+        <option value="Interface" />
         <option value="Class" />
       </list>
     </option>
@@ -122,6 +130,8 @@
     "애플리케이션._26_Singleton.main.executor": "Run",
     "애플리케이션._27_Generic.Main.executor": "Run",
     "애플리케이션._28_WildCard.Main.executor": "Run",
+    "애플리케이션._32_LayerdArchitecture.Main.executor": "Run",
+    "애플리케이션._32_LayerdArchitecture2.Main.executor": "Run",
     "애플리케이션.if01.executor": "Run",
     "애플리케이션.if02.executor": "Run",
     "애플리케이션.main.executor": "Run"

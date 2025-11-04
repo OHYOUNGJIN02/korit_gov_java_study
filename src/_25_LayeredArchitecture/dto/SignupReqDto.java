@@ -13,6 +13,10 @@ public class SignupReqDto {
     private String password;
     private String name;
 
+    public SignupReqDto() {
+
+    }
+
     public User toEntity(){
         return User.builder()
                 .username(username)
