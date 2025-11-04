@@ -1,4 +1,4 @@
-package _30_Json;
+package _30_json;
 
 /*
  * JSON(JavaScript Object Notation)
@@ -49,5 +49,8 @@ public class Json01 {
 
         String json2 = gson1.toJson(jsonObject1);
         System.out.println(json2);
+
+        JsonObject jsonObject2 = gson1.fromJson(json2, JsonObject.class);
+        System.out.println(jsonObject2);
     }
 }
