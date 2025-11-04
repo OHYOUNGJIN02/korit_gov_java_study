@@ -6,6 +6,7 @@
   <component name="ChangeListManager">
     <list default="true" id="76f4ec7b-a70b-4b77-9709-c5702ab1eb7f" name="변경" comment="ex">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/pom.xml" beforeDir="false" afterPath="$PROJECT_DIR$/pom.xml" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -67,7 +68,7 @@
     "project.structure.last.edited": "모듈",
     "project.structure.proportion": "0.15",
     "project.structure.side.proportion": "0.2",
-    "settings.editor.selected.configurable": "reference.projectsettings.compiler.javacompiler",
+    "settings.editor.selected.configurable": "preferences.pluginManager",
     "애플리케이션.ArrayEx.executor": "Run",
     "애플리케이션.BankAccountMain.executor": "Run",
     "애플리케이션.BookMain.executor": "Run",
@@ -77,6 +78,7 @@
     "애플리케이션.EscapeSequence.executor": "Run",
     "애플리케이션.For.executor": "Run",
     "애플리케이션.Forex.executor": "Run",
+    "애플리케이션.Json01.executor": "Run",
     "애플리케이션.Main.executor": "Run",
     "애플리케이션.Main2.executor": "Run",
     "애플리케이션.MessageMain.executor": "Run",
