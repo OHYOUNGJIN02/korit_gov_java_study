@@ -1,13 +1,18 @@
 package _32_LayerdArchitecture2;
 
+import _32_LayerdArchitecture2.Repository.UserRepositoryImpl2;
+import _32_LayerdArchitecture2.Service.SigninService;
+import _32_LayerdArchitecture2.Service.SigninServiceImpl;
 import _32_LayerdArchitecture2.Service.SignupService;
 import _32_LayerdArchitecture2.dto.SignUpReqDto;
+import _32_LayerdArchitecture2.dto.SigninReqDto;
 
 import java.util.Scanner;
 
 public class Main {
     public static void main(String[] args) {
         SignupService signupService = SignupService.getInstance();
+        SigninService signinService = SigninServiceImpl.getInstance();
         Scanner scanner = new Scanner(System.in);
         while (true) {
             System.out.println("[회원관리 시스템]");
@@ -46,24 +51,46 @@ public class Main {
                 while (true) {
                     System.out.print("비밀번호 확인: ");
                     signupReqDto.setConfirmPassword(scanner.nextLine());
-                    if (signupService.isValidPassword(signupReqDto.getPassword(), signupReqDto.getConfirmPassword())){
+                    if (signupService.isValidPassword(signupReqDto.getPassword(), signupReqDto.getConfirmPassword())) {
                         break;
                     }
                     System.out.println("비밀번호가 일치하지 않습니다. 다시 입력하세요.");
                 }
 
-                signupService.signup(signupReqDto);
                 System.out.println("[[ 회원가입 완료 ]]");
 
             } else if ("2".equals(selectedMenu)) {
                 System.out.println("[ 로그인 ]");
+                SigninReqDto signinReqDto = new SigninReqDto();
+
+                while (true) {
+                    System.out.print("Username: ");
+                    signinReqDto.setUsername(scanner.nextLine());
+                    if (!signinService.isEmpty(signinReqDto.getUsername())) {
+                        break;
+                    }
+                    System.out.println("다시 입력하세요.");
+                }
+                while (true) {
+                    System.out.print("Password: ");
+                    signinReqDto.setPassword(scanner.nextLine());
+                    if (!signinService.isEmpty(signinReqDto.getPassword())) {
+                        break;
+                    }
+                    System.out.println("다시 입력하세요.");
+                }
+
+
             } else if ("3".equals(selectedMenu)) {
                 System.out.println("[ 가입된 회원 전체 조회 ]");
+                System.out.println(UserRepositoryImpl2.getInstance().toString());
             } else {
                 System.out.println("메뉴를 다시 선택해주세요.");
             }
-        }
 
+
+
+        }
         System.out.println("프로그램 종료 완료");
     }
 }

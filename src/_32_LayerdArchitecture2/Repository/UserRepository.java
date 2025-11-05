@@ -5,4 +5,6 @@ import _32_LayerdArchitecture2.Entity.User;
 public interface UserRepository {
     void insert(User user);
     User findByUsername(String username);
+
+    User find(String username);
 }

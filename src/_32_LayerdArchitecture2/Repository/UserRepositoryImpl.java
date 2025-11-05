@@ -38,4 +38,9 @@ public class UserRepositoryImpl implements UserRepository{
         }
         return null;
     }
+
+    @Override
+    public User find(String username) {
+        return null;
+    }
 }
